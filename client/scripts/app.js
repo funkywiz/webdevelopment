@@ -12,7 +12,20 @@ var states = [
                          visible: false
                      }
                  }
+    },
+    {
+        name: 'Courses',
+             state:
+                 {
+                     url:'/courses',
+                     templateUrl: '../views/courses.html',
+                     data: {
+                         text: "COURSES",
+                         visible: false
+                     }
+                 }
     }
+
     ];
 
     var app = angular.module('college', [

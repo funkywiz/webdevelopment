@@ -1,15 +1,19 @@
-<div class="template-teaser_page portaltype-plone-site site-FACBIOL icons-on userrole-anonymous campl-theme-1">
+<div class="template-teaser_page portaltype-plone-site x userrole-anonymous campl-theme-1" ng-controller="Usercontrollers as ctrl">
     <div class="campl-row campl-page-header">
         <div class="campl-wrap clearfix campl-local-navigation" id="local-nav">
             <div class="campl-local-navigation-container">
                 <ul class="campl-unstyled-list">
                     <li>
-                        <a href="#">
-                            <span>HOME</span>
-                        </a>
+                    <a>
+                        <div type="submit" ng-click="ctrl.travcourses()">
+                           <span>
+                              HOME    
+                          </span>
+                        </div>
+                    </a>  
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="/courses">
                             <span>COURSES</span>
                         </a>
                     </li>
@@ -19,7 +23,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#  ">
                             <span>ACCOUNT</span>
                         </a>
                     </li>
