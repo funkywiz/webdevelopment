@@ -2,7 +2,7 @@
 'use strict';
 var states = [
     {
-        name: 'landing_page',
+        name: 'Landing_page',
              state:
                  {
                      url:'/',
@@ -21,6 +21,42 @@ var states = [
                      templateUrl: '../views/courses.html',
                      data: {
                          text: "COURSES",
+                         visible: false
+                     }
+                 }
+    },
+    {
+        name: 'Contactus',
+             state:
+                 {
+                     url:'/contactus',
+                     templateUrl: '../views/contactus.html',
+                     data: {
+                         text: "CONTACTUS",
+                         visible: false
+                     }
+                 }
+    },
+    {
+        name: 'Account',
+             state:
+                 {
+                     url:'/account',
+                     templateUrl: '../views/account.html',
+                     data: {
+                         text: "ACCOUNT",
+                         visible: false
+                     }
+                 }
+    },
+    {
+        name: 'Staff',
+             state:
+                 {
+                     url:'/staff',
+                     templateUrl: '../views/staff.html',
+                     data: {
+                         text: "STAFF",
                          visible: false
                      }
                  }
