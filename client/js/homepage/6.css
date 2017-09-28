@@ -1,0 +1,578 @@
+
+/* Fix global navation dropdown */
+ul.global-navigation-container li {display:list-item}
+
+/* Work around following broken/daft style in light/stylesheets/base.css 
+dt,dd {line-height: 18px;}
+*/
+#contentActionMenus dl {margin-bottom: 1px;}
+
+/* Need to override following broken style in light/stylesheets/base.css
+li {line-height: 18px;display:list-item}
+for Plone navigation bar
+*/
+
+ul#content-views      li {display:inline}
+ul#contentActionMenus li {display:inline}
+
+
+/* Temporary lashup until we have proper styling for footers */
+#falcon-footer {color: white;}
+
+/* Fixup #portal-personaltools. Both <ul> and <dl> versions exist */
+
+ul#portal-personaltools {
+    list-style-type: none;
+}
+
+ul#portal-personaltools li a {
+    color: #003C79;
+}
+
+dl#portal-personaltools { margin-bottom: 0px }
+
+dl#portal-personaltools dt a, #portal-personaltools dd a {
+    color: #003C79;
+}
+
+dl#portal-personaltools dd ul {
+    list-style-type: none;
+    margin-left: 0em;
+}
+
+/* Override daft default in light/stylesheets/full-stylesheet.css:
+     textarea { height: 18px; } !?
+*/
+/*editable area*/
+#content textarea {width:100%;height: auto;overflow: auto;resize: vertical;vertical-align: top;}
+
+
+
+/* XXX: will need to generate permutation of the attached for each
+ * XXX: colour scheme in use 
+ */
+
+/* Light gray and white are only sensible colours with green background */
+.campl-local-footer {
+    color: #ccc;
+}
+
+/* Need sensible background with white text */
+.campl-local-footer div.portletAssignments div.portletHeader {
+    background-color: #808080;
+}
+
+/*
+  iPad doesn't flip from portrait to landscape mode correctly for
+  following UCS News Item:
+
+    Thur 29 Nov, 07.30 - 09.00:
+    "Desktop Services server 'filestore.ds.cam.ac.uk' unavailable"
+
+  without a bit of help.
+  */
+
+/*rss feed portlet styling*/
+.campl-news-listing {word-wrap: break-word; padding: 0 0 9px;}
+.campl-listing-title, .campl-listing-item {font-size:13px; line-height:18px; font-weight:normal;}
+
+/*image styling*/
+.image-inline img, .mceContentBody img.image-inline.captioned {
+float: none;max-width: 100%;height: auto;padding:0 0 10px 0;}
+
+/*styling for floating images - amalgamating two classes*/
+
+img.image-left , .mceContentBody img.image-left  {float: left;margin: 10px 30px 10px 0;clear: both;max-width: 100%;height: auto;}
+
+img.image-right , .mceContentBody img.image-right  {float:right;margin: 10px 0 10px 20px;clear: both;max-width: 100%;height: auto;}
+
+/*.image-left.captioned img, .mceContentBody .image-left.captioned img {float: left;margin: 10px 30px 10px 0;clear: both;max-width: auto!important;}
+
+.image-right.captioned img, .mceContentBody .image-right.captioned img {float:right;margin: 10px 0 10px 20px;clear: both;max-width: auto!important;}*/
+
+/* anything smaller than tablet portrait ie. mobile devices */
+@media (max-width: 767px) {
+dl.image-right.captioned, .mceContentBody dl.image-right.captioned, img.image-right{display:block!important;float:none!important;margin:10px 0 10px 0;max-width: 100%!important;}
+
+dl.image-left.captioned, .mceContentBody dl.image-left.captioned, img.image-left {display:block!important;float:none!important;margin:10px 0 10px 0;max-width: 100%!important;}}
+
+/* suppress inline style for captioned images */
+dl.image-inline.captioned {max-width: 100% !important;}
+
+/*sort out image in static text portlet*/
+.falcon-static-portlet img.image-inline {max-width: 100%;height: auto;}
+
+/*show event date with background tint*/
+.ploneCalendar .event {background:#ddd;}
+
+/*default link comment colour in footer portlet*/
+div.portletAssignments .managedPortletActions a, div.portletAssignments .managedPortletActions button {color:#f60;}
+
+/*image caption*/
+dd.image-caption {text-align: left;padding: 6px 3px 0 3px;color: #292929;font-size: 90%;}
+
+/*Images for links*/
+body#content .campl-icon, .campl-icon {background: url("../light/images/interface/icon-links-sprite.png")no-repeat scroll 0 0 transparent;display: inline;position:static;height: 25px;margin-left: 2px;padding: 5px 0 2px 20px;top: 5px; width: 20px;
+}
+
+body#content .campl-print-icon, .campl-print-icon {
+    background-position: 0 5px;
+}
+body#content .campl-lock-icon, .campl-lock-icon {
+    background-position: 0 -25px;
+}
+body#content .campl-help-icon, .campl-help-icon {
+    background-position: 0 -55px;
+}
+body#content .campl-info-icon, .campl-info-icon {
+    background-position: 0 -80px;
+}
+body#content .campl-excel-icon, .campl-excel-icon {
+    background-position: 0 -110px;
+}
+body#content .campl-pdf-icon, .campl-pdf-icon {
+    background-position: 0 -135px;
+}
+body#content .campl-word-icon, .campl-word-icon{
+    background-position: 0 -159px;
+}
+
+/*blockquote styles*/
+.quote {font-family: Georgia,"sans serif";font-size: 19px;font-style: italic;margin: 0 0 10px;padding: 0 0 0 25px; line-height: 22.5px;}
+.open-quote {background: url("../light/images/interface/bg-blockquote-top.png") no-repeat scroll left top transparent;margin-top: 10px;}
+.close-quote {background: url("../light/images/interface/bg-blockquote-bottom.png") no-repeat scroll right bottom transparent;}
+.cite {color: #999;display: block;line-height: 18px;font-size: 13px;font-family: Georgia,"sans serif"; padding: 0 0 0 25px;font-style: italic;clear:both;}
+.cite:before {content: "- ";}
+
+/*lists*/
+#content-core ul, .mceContentBody ul, #content-core ol, .mceContentBody ol {margin: 0 0 12px 30px;padding: 0;}
+.mceContentBody .az-list ul li {display: inline-block;}
+.mceContentBody ul li, .mceContentBody ol li {display: list-item;line-height: 18px;margin-bottom:0;}
+.lower-alpha {list-style-type: lower-alpha;}
+.upper-alpha {list-style-type: upper-alpha;}
+.lower-roman {list-style-type: lower-roman}
+.upper-roman {list-style-type: upper-roman;}
+
+/*AZ styles*/
+.az-list {clear: both;width: 100%;text-align: center;padding: 20px 0;}
+.az-list ul {padding-bottom: 5px;font-size: 14px;line-height: 20px;font-weight: bold;list-style: none outside none;margin: 0;}
+.az-list li {padding: 0 11px 0 1px;background: url("../light/images/interface/bg-navigation-divider.png") no-repeat scroll right center transparent;display: inline-block;}
+
+.az-list li:last-child {background: none repeat scroll 0 0 transparent;}
+.az-list a, .az-list a:hover, .az-list a:focus, .az-list a.selected {position: relative;color: #FFFFFF!important;text-decoration: none;border-bottom: 0!important;}
+.az-list a:focus .campl-list-indicator, .az-list a:hover .campl-list-indicator, .az-list .selected .campl-list-indicator {display: block;}
+.az-list a .campl-list-indicator {background: url("../light/images/interface/bg_list_indicator.png") no-repeat scroll 0 0 transparent;bottom: -30px;display: none;height: 21px;left: 50%;margin-left: -22px;position: absolute;width: 41px;}
+.az-list {background:#106470;}
+.campl-theme-1 .az-list {background:#003e74;}
+.campl-theme-2 .az-list {background:#106470;}
+.campl-theme-3 .az-list {background:#422e5d;}
+.campl-theme-4 .az-list {background:#304220;}
+.campl-theme-5 .az-list {background:#c44101;}
+.campl-theme-6 .az-list {background:#851735;}
+.campl-theme-7 .az-list {background:#404040;}
+.campl-theme-8 .az-list {background:#ABB400;}
+.campl-theme-9 .az-list {background:#B6B5B5;}
+
+/* anything smaller than tablet portrait ie. mobile devices */
+@media (max-width: 767px) {
+.az-list ul{display:none}}
+
+/*news story caption*/
+#content div.newsImageContainer p.discreet {text-align: left;padding: 6px 3px 0 3px;color: #292929;font-size: 90%;background-color: #fff;font-weight:normal;position: normal;top:0;} 
+
+
+
+/*insert/modify table box*/
+.panel_wrapper div.current {
+    height: auto;
+}
+
+/*text format box*/
+.fieldTextFormat {display:none;}
+
+/*popup boxes*/
+
+body.forceColors, body.forceColors label, body.forceColors input, body.forceColors button, body.forceColors select, body.forceColors textarea {
+    font-size: 12px!important;
+    line-height: 18px!important;
+}
+
+body.template-atct_edit .plonepopup html body#table.forceColors div#content.dialog-wrapper form div.panel_wrapper div#general_panel.panel fieldset.formPanel div.field label#classlabel {
+    font-size: 12px!important;}
+
+.plonepopup, .plonepopup div, .plonepopup span, .plonepopup a, .plonepopup div body#table {
+    font-size: 12px!important;}
+
+/*subtitle*/
+.campl-page-subtitle {color: #FFF; font-size: 30px;line-height: 36px;font-family: "myriad-pro",myriad,verdana,arial,sans-serif;
+    font-weight: 300;}
+@media (max-width: 767px) {.campl-page-subtitle{font-size: 18px;line-height: 34px;margin-bottom:0}}
+
+/*iframe body*/
+body#content {font-family: verdana,arial,sans-serif;font-size: 12px;margin: 1em;padding: 1em;width:95%;}
+
+/*fsd styling*/
+#content #fsdperson-base-edit label, body.template-base_edit label {display:inline; padding:0 0 6px 0;}
+body.template-base_edit table {border-bottom:none;}
+#content .personView p.title {font-family:"myriad-pro",myriad,verdana,arial,sans-serif;font-style: normal;font-weight: 600;font-size: 17px;line-height: 23px; width: 60%;padding-bottom:6px;}
+#content .personView div.position-12 {margin-left: -35%;}
+.template-department_standard_view div.position-4, .template-classification_standard_view div.position-4 {margin-left: -75%;}
+.template-department_standard_view div.width-13, .template-classification_standard_view div.width-13, .template-directory_standard_view div.width-13 {width: 75%;}
+table.keys {width:100%;}
+#content .personView .courselisting dd, #content .personView .specialties dd {font-size: 12px;}
+
+/*tables*/
+.data {border-left:1px solid #e4e4e4;border-right:1px solid #e4e4e4;border-collapse: separate;border-left: 0;width: 100%;margin-bottom: 18px;}
+.data th,.data td {padding: 10px 15px;line-height: 18px;text-align: left;vertical-align: top}
+.data th {font-weight: bold;}
+.data thead th {vertical-align: bottom;}
+.data caption + thead tr:first-child th,
+.data caption + thead tr:first-child td,
+.data colgroup + thead tr:first-child th,
+.data colgroup + thead tr:first-child td,
+.data thead:first-child tr:first-child th,
+.data thead:first-child tr:first-child td {border-top: 0;}
+
+.lt-ie8 .data {border-collapse: collapsed;}
+
+.data td { border-left: 1px solid #e4e4e4;}
+.data caption + thead tr:first-child th,
+.data caption + tbody tr:first-child th,
+.data caption + tbody tr:first-child td,
+.data colgroup + thead tr:first-child th,
+.data colgroup + tbody tr:first-child th,
+.data colgroup + tbody tr:first-child td,
+.data thead:first-child tr:first-child th,
+.data tbody:first-child tr:first-child th,
+.data tbody:first-child tr:first-child td {border-top: 0;}
+
+caption{background:#fff;padding:5px 0}
+
+/*table colourways*/
+table, 
+.data {border-bottom:2px solid #28828a;}
+th{background:#28828a;color:#fff}
+.data tbody tr:nth-child(odd) td,
+.data tbody tr:nth-child(odd) th { background-color: #d2f3e1;}
+.data th{border-left: 1px solid #d2f3e1;}
+.campl-theme-1 table, 
+.campl-theme-1 .data {border-bottom:2px solid #0072cf;}
+.campl-theme-1 table#listing-table {border-bottom:2px solid #DDDDDD;}
+.campl-theme-1 table.keys {border-top:1px solid #DDDDDD;border-bottom:1px solid #DDDDDD;}
+.campl-theme-1 th{background:#0072cf;color:#fff}
+.campl-theme-1 th.campl-alt{background:#fff;color:#0072cf}
+.campl-theme-1 .data tbody tr:nth-child(odd) td,
+.campl-theme-1 .data tbody tr:nth-child(odd) th { background-color: #d2e4f3;}
+.campl-theme-1 .data th{border-left: 1px solid #d2e4f3;}
+.campl-theme-2 table, 
+.campl-theme-2 .data {border-bottom:2px solid #28828a;}
+.campl-theme-2 table#listing-table {border-bottom:2px solid #DDDDDD;}
+.campl-theme-2 table.keys {border-top:1px solid #DDDDDD;border-bottom:1px solid #DDDDDD;}
+.campl-theme-2 th{background:#28828a;color:#fff}
+.campl-theme-2 th.campl-alt{background:#fff;color:#28828a}
+.campl-theme-2 .data tbody tr:nth-child(odd) td,
+.campl-theme-2 .data tbody tr:nth-child(odd) th { background-color: #d2f3e1;}
+.campl-theme-2 .data th{border-left: 1px solid #d2f3e1;}
+.campl-theme-3 table, 
+.campl-theme-3 .data {border-bottom:2px solid #8f2b8c;}
+.campl-theme-3 table#listing-table {border-bottom:2px solid #DDDDDD;}
+.campl-theme-3 table.keys {border-top:1px solid #DDDDDD;border-bottom:1px solid #DDDDDD;}
+.campl-theme-3 th{background:#8f2b8c;color:#fff}
+.campl-theme-3 th.campl-alt{background:#fff;color:#8f2b8c}
+.campl-theme-3 .data tbody tr:nth-child(odd) td,
+.campl-theme-3 .data tbody tr:nth-child(odd) th { background-color: #f4d3e5;}
+.campl-theme-3 .data th{border-left: 1px solid #f4d3e5;}
+.campl-theme-4 table, 
+.campl-theme-4 .data {border-bottom:2px solid #57831a;}
+.campl-theme-4 table#listing-table {border-bottom:2px solid #DDDDDD;}
+.campl-theme-4 table.keys {border-top:1px solid #DDDDDD;border-bottom:1px solid #DDDDDD;}
+.campl-theme-4 th{background:#57831a;color:#fff}
+.campl-theme-4 th.campl-alt{background:#fff;color:#57831a}
+.campl-theme-4 .data tbody tr:nth-child(odd) td,
+.campl-theme-4 .data tbody tr:nth-child(odd) th { background-color: #f4f6cd;}
+.campl-theme-4 .data th{border-left: 1px solid #f4f6cd;}
+.campl-theme-5 table, 
+.campl-theme-5 .data {border-bottom:2px solid #df671d;}
+.campl-theme-5 table#listing-table {border-bottom:2px solid #DDDDDD;}
+.campl-theme-5 table.keys {border-top:1px solid #DDDDDD;border-bottom:1px solid #DDDDDD;}
+.campl-theme-5 th{background:#df671d;color:#fff}
+.campl-theme-5 th.campl-alt{background:#fff;color:#df671d}
+.campl-theme-5 .data tbody tr:nth-child(odd) td,
+.campl-theme-5 .data tbody tr:nth-child(odd) th { background-color: #f5e7ca;}
+.campl-theme-5 .data th{border-left: 1px solid #f5e7ca;}
+.campl-theme-6 table, 
+.campl-theme-6 .data {border-bottom:2px solid #d61746;}
+.campl-theme-6 table#listing-table {border-bottom:2px solid #DDDDDD;}
+.campl-theme-6 table.keys {border-top:1px solid #DDDDDD;border-bottom:1px solid #DDDDDD;}
+.campl-theme-6 th{background:#d61746;color:#fff}
+.campl-theme-6 th.campl-alt{background:#fff;color:#d61746}
+.campl-theme-6 .data tbody tr:nth-child(odd) td,
+.campl-theme-6 .data tbody tr:nth-child(odd) th { background-color: #f8e1e5;}
+.campl-theme-6 .data th{border-left: 1px solid #f8e1e5;}
+.campl-theme-7 table, 
+.campl-theme-7 .data {border-bottom:2px solid #8C8989;}
+.campl-theme-7 table#listing-table {border-bottom:2px solid #DDDDDD;}
+.campl-theme-7 table.keys {border-top:1px solid #DDDDDD;border-bottom:1px solid #DDDDDD;}
+.campl-theme-7 th{background:#8C8989;color:#fff}
+.campl-theme-7 th.campl-alt{background:#fff;color:#8C8989}
+.campl-theme-7 .data tbody tr:nth-child(odd) td,
+.campl-theme-7 .data tbody tr:nth-child(odd) th { background-color: #DBD9D9;}
+.campl-theme-7 .data th{border-left: 1px solid #DBD9D9;}
+.campl-theme-8 table, 
+.campl-theme-8 .data {border-bottom:2px solid #888b22;}
+.campl-theme-8 table#listing-table {border-bottom:2px solid #DDDDDD;}
+.campl-theme-8 table.keys {border-top:1px solid #DDDDDD;border-bottom:1px solid #DDDDDD;}
+.campl-theme-8 th{background:#888b22;color:#fff}
+.campl-theme-8 th.campl-alt{background:#fff;color:#888b22}
+.campl-theme-8 .data tbody tr:nth-child(odd) td,
+.campl-theme-8 .data tbody tr:nth-child(odd) th { background-color: #dfdfac;}
+.campl-theme-8 .data th{border-left: 1px solid #dfdfac;}
+.campl-theme-9 table, 
+.campl-theme-9 .data {border-bottom:2px solid #8c8989;}
+.campl-theme-9 th {background:#b6b5b5;color:#fff}
+.campl-theme-9 th.campl-alt {background:#fff;color:#8c8989}
+.campl-theme-9 .data tbody tr:nth-child(odd) td,
+.campl-theme-9 .data tbody tr:nth-child(odd) th { background-color: #eaf1f3;}
+.campl-theme-9 .data th {border-left: 1px solid #efefd9;}
+
+.data th{background:#28828a!important;color:#fff}
+.campl-theme-1 .data th{background:#0072cf!important;color:#fff}
+.campl-theme-2 .data th{background:#28828a!important;color:#fff}
+.campl-theme-3 .data th{background:#8f2b8c!important;color:#fff}
+.campl-theme-4 .data th{background:#57831a!important;color:#fff}
+.campl-theme-5 .data th{background:#df671d!important;color:#fff}
+.campl-theme-6 .data th{background:#d61746!important;color:#fff}
+.campl-theme-7 .data th{background:#8C8989!important;color:#fff}
+.campl-theme-8 .data th{background:#888b22!important;color:#fff}
+.campl-theme-9 .data th{background:#b6b5b5!important;color:#000}
+.data th{background:#28828a!important;color:#fff}
+.campl-theme-1 #listing-table th{background:#DDDDDD!important;color:#666666;}
+.campl-theme-2 #listing-table th{background:#DDDDDD!important;color:#666666;}
+.campl-theme-3 #listing-table th{background:#DDDDDD!important;color:#666666;}
+.campl-theme-4 #listing-table th{background:#DDDDDD!important;color:#666666;}
+.campl-theme-5 #listing-table th{background:#DDDDDD!important;color:#666666;}
+.campl-theme-6 #listing-table th{background:#DDDDDD!important;color:#666666;}
+.campl-theme-7 #listing-table th{background:#DDDDDD!important;color:#666666;}
+.campl-theme-8 #listing-table th{background:#DDDDDD!important;color:#666666;}
+.campl-theme-9 #listing-table th{background:#DDDDDD!important;color:#666666;}
+.data tbody tr:hover td, .data tbody tr:hover th, 
+.campl-theme-1 .data tbody tr:hover td, .campl-theme-1 .data tbody tr:hover th, 
+.campl-theme-2 .data tbody tr:hover td, .campl-theme-2 .data tbody tr:hover th, 
+.campl-theme-3 .data tbody tr:hover td, .campl-theme-3 .data tbody tr:hover th, 
+.campl-theme-4 .data tbody tr:hover td, .campl-theme-4 .data tbody tr:hover th, 
+.campl-theme-5 .data tbody tr:hover td, .campl-theme-5 .data tbody tr:hover th, 
+.campl-theme-6 .data tbody tr:hover td, .campl-theme-6 .data tbody tr:hover th, 
+.campl-theme-7 .data tbody tr:hover td, .campl-theme-7 .data tbody tr:hover th, 
+.campl-theme-8 .data tbody tr:hover td, .campl-theme-8 .data tbody tr:hover th, .campl-theme-9 .data tbody tr:hover td, .campl-theme-9 .data tbody tr:hover th{background-color: #e4e4e4;}
+/*table style for showing just images*/
+table.images, table.images th, table.images td {background:#fff!important;}
+table.images {border-bottom:none;}
+.campl-theme-1 table.images, .campl-theme-1 table.images th, .campl-theme-1 table.images td {background:#fff!important;}
+.campl-theme-1 table.images {border-bottom:none;}
+.campl-theme-2 table.images, .campl-theme-2 table.images th, .campl-theme-2 table.images td {background:#fff!important;}
+.campl-theme-2 table.images {border-bottom:none;}
+.campl-theme-3 table.images, .campl-theme-3 table.images th, .campl-theme-3 table.images td {background:#fff!important;}
+.campl-theme-3 table.images {border-bottom:none;}
+.campl-theme-4 table.images, .campl-theme-4 table.images th, .campl-theme-4 table.images td {background:#fff!important;}
+.campl-theme-4 table.images {border-bottom:none;}
+.campl-theme-5 table.images, .campl-theme-5 table.images th, .campl-theme-5 table.images td {background:#fff!important;}
+.campl-theme-5 table.images {border-bottom:none;}
+.campl-theme-6 table.images, .campl-theme-6 table.images th, .campl-theme-6 table.images td {background:#fff!important;}
+.campl-theme-6 table.images {border-bottom:none;}
+.campl-theme-7 table.images, .campl-theme-7 table.images th, .campl-theme-7 table.images td {background:#fff!important;}
+.campl-theme-7 table.images {border-bottom:none;}
+.campl-theme-8 table.images, .campl-theme-8 table.images th, .campl-theme-8 table.images td {background:#fff!important;}
+.campl-theme-8 table.images {border-bottom:none;}
+.campl-theme-9 table.images, .campl-theme-9 table.images th, .campl-theme-9 table.images td {background:#fff!important;}
+.campl-theme-9 table.images {border-bottom:none;}
+
+
+/* tables for anything smaller than tablet portrait ie. mobile devices changed from 400 to 320 14.3.17 */
+@media (max-width:767px){
+table.data {width: 100%;min-width: 320px;overflow-x: auto; }
+/* Hide table headers (but not display: none;, for accessibility) */
+.campl-vertical-stacking-table th { position: absolute;top: -9999px;left: -9999px;}
+}
+/*carousel link*/
+.campl-carousel a {color: #ffffff !important;text-decoration: none;}
+
+/*sub-page carousel*/
+.campl-main-content div.campl-carousel .image-container {text-align:left;} .campl-main-content div.campl-carousel .campl-slide-caption {max-width: 510px}
+@media (max-width:767px){
+.campl-main-content div.campl-carousel .image-container {text-align:center;}} 
+
+/*table of contents styling - modified 4.15*/
+dl.toc {float:none;margin: 1em 0 0;width:100%;font-size: 100%;}
+dl.toc dt {margin-left: 0;}
+dl.toc dd {padding-left: 0;}
+dl.toc dd ol {margin-left: 0;}
+dl.portlet {margin-bottom: 1em;}
+dl.portlet.toc dt.portletHeader {background: #FFF; padding: 0 1em;}
+dl.portlet dt.portletHeader {background: #F3F3F3; padding: 20px 20px 0.5em;font-size: 125%;}
+#content dl.portlet dd.portletItem {margin: 0 0 1em 0;}
+
+/*shows there is iframe content in edit view*/
+body#content img.mceItemIframe {background: #CF9;}
+
+/*show headings nicely in edit view*/
+body.mceContentBody h2 {color: #106470;font-size: 19px;line-height: 25px;}
+body.mceContentBody h3 {font-size: 17px;line-height: 23px;}
+body.mceContentBody h4 {font-size:15px;line-height: 21px;}
+body.mceContentBody h5 {font-size:14px;line-height: 20px;}
+body.mceContentBody h6, cite {font-size:13px;line-height: 19px}
+body.mceContentBody h2,body.mceContentBody h3,body.mceContentBody h4,body.mceContentBody h5,body.mceContentBody h6{font-family:arial,verdana,sans-serif;font-style: normal;font-weight: 600;}
+
+/*fix date in news listing */
+#content-core .date { border: none;font-size: 12px;padding: 4px;text-align: normal;width: 100%;font-weight: bold;}
+
+/*previous next styling*/
+a.next {background-image:none!important;}
+div.listingBar a {text-decoration: none;}
+div.listingBar a:hover {background-color:#666;border-color:#666;color: #FFF;}
+
+/*iframe scaling styles*/
+div.scale-iframe {position: relative;
+    padding-bottom: 56.25%; /* 16/9 ratio */
+    padding-top: 30px; /* IE6 workaround*/
+    height: 0;overflow: hidden;}
+
+.scale-iframe iframe, .scale-iframe object, .scale-iframe embed {position: absolute;top: 0;left: 0;width: 100%;height: 100%;}
+
+
+/*.campl-theme-1 table.listing tbody tr.odd th, .campl-theme-2 table.listing tbody  tr.odd th, .campl-theme-3 table.listing tbody tr.odd th, .campl-theme-4 table.listing tbody tr.odd th, .campl-theme-5 table.listing tbody tr.odd th, .campl-theme-6 table.listing tbody tr.odd th, .campl-theme-7 table.listing tbody tr.odd th {border-right:1px solid #fff;}*/
+
+.icons-on table.listing td {line-height: 18px;}
+#content .facultyStaffDirectory .tabularView thead th {background: #ddd; font-size: 1.2em;padding:1em 0 6px 6px;}
+/*sorting out some table styling problems*/
+.campl-theme-1 #content .facultyStaffDirectory table.listing th, 
+.campl-theme-2 #content .facultyStaffDirectory table.listing th, 
+.campl-theme-3 #content .facultyStaffDirectory table.listing th, 
+.campl-theme-4 #content .facultyStaffDirectory table.listing th, 
+.campl-theme-5 #content .facultyStaffDirectory table.listing th, 
+.campl-theme-6 #content .facultyStaffDirectory table.listing th, 
+.campl-theme-7 #content .facultyStaffDirectory table.listing th, 
+.campl-theme-8 #content .facultyStaffDirectory table.listing th, 
+.campl-theme-9 #content .facultyStaffDirectory table.listing th {background:#DDD;color:#666;border: 1px solid #999;}
+#content .facultyStaffDirectory .tabularView thead th.classification {background-color:#fff; border: none;}
+
+#content .facultyStaffDirectory table.listing tr.even td, #content .facultyStaffDirectory table.listing tr.even th, #content .facultyStaffDirectory  .tabularView table.listing tr.even td, #content .facultyStaffDirectory .tabularView table.listing tr.even th {border: 1px solid #999;background:#EEEEEE}
+#content .facultyStaffDirectory table.listing tr.odd th, #content .facultyStaffDirectory table.listing tr.odd td, #content .facultyStaffDirectory .tabularView table.listing tr.odd th, #content .facultyStaffDirectory .tabularView table.listing tr.odd td {border: 1px solid #999;background:#fff}
+
+table.listing {border-bottom: 1px solid #DDDDDD;}
+table.sequencewidget {border-bottom: none;}
+div.configlet table, div.configlet table th {border:1px solid #DDDDDD;padding: 3px;}
+div.table table {border: 1px solid #000000;border-collapse: collapse;}
+div.table tr.header {background: #000000;color: #FFFFFF;}
+div.table td.date {width: 6em!important;}
+
+.campl-theme-1 table.images, .campl-theme-1 table.images th, .campl-theme-1 table.images td {background:#fff!important;}
+.campl-theme-1 table.images {border-bottom:none;}
+
+/*align check boxes and labels alongside*/
+ul.configlets label, div.field label {display:inline;padding-left: 0.5em;}
+div.field label.formQuestion {padding-left: 0px; font-weight:bold;}
+div#formfield-form-widgets-colour_scheme select {width: 120px;}
+div.filters .type-filters label, div.filters .state-filters label  {display:inline;padding-left: 0.5em;}
+.filter-option {display:block;}
+
+/*selection boxes in site and configs*/
+select {width: auto;}
+.plone_jscalendar select {width: 65px;}
+
+/*make space between editing bar and content*/
+#plone-document-byline {padding: 0 0 2.5em 0;}
+
+/*embedding quote into content area*/
+.embed-quote {float:right; margin:0 1em 1em;width:40%;}
+/* anything smaller than tablet portrait ie. mobile devices */
+@media (max-width: 767px) {
+.embed-quote {float:none; margin:0 1em 1em;width:80%;}}
+
+/*for removingcoloured rule under table*/
+#content table.neat {border-bottom: none;}
+#content table.neat th, #content table.neat td  {padding: 6px;}
+
+/*for fixing pixel slice off carousel and borders issue*/
+.campl-sub-column-left-border {margin-left: 1px;border-left: medium none;}
+
+/*moves FSD head-shots to line above on narrower views*/ 
+@media (max-width:1156px) {
+.vcard.facultyStaffDirectory div.cell {float:none; left:35%; padding-bottom: 12px;}}
+@media (max-width:1120px) {
+.facultyStaffDirectory .classificationListing div.row {float:none;display:block;position:relative;}
+.facultyStaffDirectory .classificationListing div.cell.width-3 {float:none; position:relative; padding-bottom:1em;}
+.facultyStaffDirectory .classificationListing div.cell.position-4 {margin-left: -99%;padding-bottom:1em;}}
+
+/*remove external link icon from footer, etc*/
+#falcon-local-footer a.campl-external {background:none;}
+
+/*space between viewlets and content area*/
+#parent-fieldname-description {margin-bottom:2em;}
+#viewlet-above-content-body {margin-bottom: 1em;}
+#viewlet-below-content-body {margin-top: 2em;}
+
+/*even right col left edge*/
+.campl-sub-column-left-border {margin-left: 0;}
+
+/*fix for squished search button, mobile view*/
+.campl-site-search-form input.campl-search-submit {width: 32px;}
+
+/*allow extra room for oembed portlet*/
+.falcon-sharing-portlet .campl-no-top-padding {padding:0;}
+
+/*tweak site setup*/
+#formfield-form-widgets-sharethis_targets table {margin-top:10px; border-bottom:none;}
+#formfield-form-widgets-sharethis_targets table td {padding-right: 10px;}
+
+/*alert boxes*/
+
+div.alert {
+    background: url("../light/images/interface/icon-alert.png") no-repeat 15px 10px;
+    border: 2px solid #EA7125;
+    margin: 1em 0;
+    padding: 15px 18px 12px 60px;
+}
+
+div.warning {
+    background: url("../light/images/interface/icon-warning.png") no-repeat 15px 10px;
+    border: 2px solid #FF0000;
+    margin: 1em 0;
+    padding: 15px 18px 12px 60px;
+}
+
+div.info {
+    background: url("../light/images/interface/icon-information.png") no-repeat 15px 10px;
+    border: 2px solid #0072CF;
+    margin: 1em 0;
+    padding: 15px 18px 12px 60px;
+}
+
+/*super and subscript styles
+span.sup {font-size: .83em;vertical-align: super;}
+span.sub {font-size: .83em;vertical-align: sub;}*/
+
+/*space after description*/
+#content .documentDescription, #content #description {margin-bottom: 2em;}
+
+/*sort out editing toolbar tabs*/
+#content-views a, #content li.formTab a, #content-core li.formTab a {line-height: 2em;}
+
+/*headings for social networking, sharing and oembed portlets*/
+.template-falcon-socialsharingportlet #content legend, .template-falcon-oembedportlet #content legend, .template-collective-googleanalytics-analyticsportlet #content legend, .portaltype-folder #content legend, .portaltype-plone-site #content legend, .portaltype-document #content legend {font-size: 19px;line-height: 25px; padding: 0.5em 0;}
+label {font-weight: bold;}
+.formHelp {padding: 0 0 0.5em 0.5em}
+
+/*search term weight in heading*/
+strong#search-term {font-weight: 500;}
+
+/*layout of manage portlets screen*/
+#viewlet-falcon-carousel, #viewlet-falcon-teasers, #viewlet-falcon-below-content-portlets {padding: 20px;}
+.blockedPortlet .portletHeader a {color: #999;}
+
+/*move cookie policy checkbox to left*/
+#tlspu_cookiepolicy_form {text-align: left;}
+#tlspu_cookiepolicy_form label {font-size:14px; display:inline;padding:0 0 0 1em;}
+
+/*improve forms thanks page formatting*/
+.portaltype-formthankspage blockquote {background: none; font-family: "Helvetica Neue",Arial,FreeSans,sans-serif;font-size: 14px; line-height: 1.5em;}
+.portaltype-formthankspage blockquote dt {margin-top: 1em;}
