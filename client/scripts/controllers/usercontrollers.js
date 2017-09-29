@@ -23,5 +23,9 @@
     		console.log("SUCCESS");
     		$state.go('Contactus');
     	}
+    	ctrl.travsignup=function(){
+    		console.log("SUCCESS");
+    		$state.go('Signup');
+    	}
     }
 })();

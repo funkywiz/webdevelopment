@@ -60,6 +60,18 @@ var states = [
                          visible: false
                      }
                  }
+    },
+    {
+        name: 'Signup',
+             state:
+                 {
+                     url:'/signup',
+                     templateUrl: '../views/signup.html',
+                     data: {
+                         text: "SIGNUP PAGE",
+                         visible: false
+                     }
+                 }
     }
 
     ];
