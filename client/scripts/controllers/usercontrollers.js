@@ -3,7 +3,8 @@
     Usercontrollers.$inject= ['$state'];
     function Usercontrollers($state){
     	var ctrl=this;
-    	ctrl.travcourses=function(){
+    	var isLogin=true;
+        ctrl.travcourses=function(){
     		console.log("SUCCESS");
     		$state.go('Courses');
     	}
@@ -27,5 +28,22 @@
     		console.log("SUCCESS");
     		$state.go('Signup');
     	}
+        ctrl.SwitchLoginWindow=function(){
+            ctrl.isLogin=true;
+        }
+        ctrl.SwitchRegWindow=function(){
+            ctrl.isLogin=false;
+        }
+        ctrl.submitdata=function(){
+            var data={
+            fname : ctrl.firstname,
+            lname : ctrl.lastname,
+            email : ctrl.email,
+            cnfemail : ctrl.cnfemail,
+            password : ctrl.password,
+            cnfpassword : ctrl.cnfpassword
+            };
+            console.log(data);
+        }
     }
 })();
