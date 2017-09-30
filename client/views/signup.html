@@ -18,9 +18,9 @@
         <div class="campl-wrap clearfix">
             <div class="campl-column12">
                 <div class="campl-content-container" id="falcon-logo-wrapper">
-                    <ul class="actionMenu deactivated" id="portal-personaltools">
-                        <li id="anon-personalbar">
-                            <a href="" ng-click="ctrl.travsignup()" id="personaltools-login">Log in</a>
+                    <ul class="actionMenu deactivated" id="portal-personaltools" ng-click="ctrl.travsignup()">
+                        <li id="anon-personalbar" >
+                            <a href="" id="personaltools-login">Login/Register</a>
                         </li>
                     </ul>
                     <div class="campl-breadcrumb" id="campl-breadcrumb">
@@ -76,28 +76,28 @@
             </div>
         </div>
     </div>
-    <div class="campl-row campl-page-header" >
-        <div class="campl-wrap clearfix"><!-- 
-            <div class="campl-column12"> -->
+    <!-- <div class="campl-row campl-page-header" >
+        <div class="campl-wrap clearfix"> 
+            <div class="campl-column12"> 
                 <div class="campl campl-recessed-carousel" >
                     <div class="section-carousel campl-carousel clearfix campl-banner" id="campl-carousel">
                         <div class="campl-carousel-container">
-                          <!--   <ul class="campl-unstyled-list campl-slides">
-                               -->  <!-- <li class="campl-slide campl-column12"> -->
+                             <ul class="campl-unstyled-list campl-slides">
+                                  <li class="campl-slide campl-column12"> 
                                     <div class="image-container">
-                                        <img class="campl-scale-with-grid" src="./images/pages/account.jpg" />
+                                        <img class="campl-scale-with-grid" src="./images/pages/courses.jpg" />
                                     </div>
                                     <div class="campl-slide-caption">
                                         <span class="campl-slide-caption-txt"></span>
-                                    </div><!-- 
-                                </li> -->
-                          <!--   </ul> -->
+                                    </div>
+                                </li> 
+                             </ul> 
                         </div>
                     </div>
                 </div>
                 <div class="campl-slides"></div>
         </div>
-    </div>
+    </div> -->
 <!--<div class="campl-row campl-content campl-recessed-content">
         <div class="campl-wrap clearfix">
             <div class="campl-column6 campl-main-content">
@@ -254,14 +254,111 @@
   -->           <!-- </div>
         </div>
     </div> -->
-    	<div class="campl-row campl-content campl-recessed-content">
-    	<br><br><br><br><br><br><br>
-    	<br><br><br><br><br><br><br>
-    	ACCOUNT 
-    	<br><br><br><br><br><br><br>
-    	<br><br><br><br><br><br><br>
-    	<br><br><br><br><br><br><br>
-    	</div>
+   	<div style="background-color: white;" class="campl-row campl-content campl-recessed-content">
+       <div class="container white z-depth-2">
+    <ul class="tabs teal">
+        <li class="tab col s3"><a class="white-text active" href="" ng-click=ctrl.SwitchLoginWindow()>login</a></li>
+        <li class="tab col s3"><a class="white-text" href="" ng-click="ctrl.SwitchRegWindow()">register</a></li>
+    </ul>
+    <div id="login" class="col s12"  ng-show="ctrl.isLogin">
+        <form class="col s12">
+            <div class="form-container">
+                <h3 class="teal-text">Hello</h3>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="email" type="email" class="validate">
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="password" type="password" class="validate">
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <br>
+                <center>
+                    <button class="btn waves-effect waves-light teal" type="submit" name="action">Connect</button>
+                    <br>
+                    <br>
+                    <a href="">Forgotten password?</a>
+                </center>
+            </div>
+        </form>
+    </div>
+    <div id="register" ng-show="!ctrl.isLogin" class="col s12">
+        <form class="col s12">
+            <div class="form-container">
+                <h3 class="teal-text">Welcome</h3>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="last_name" ng-model="ctrl.firstname" name=FirstName type="text" class="validate">
+                        <label for="last_name">First Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="last_name" ng-model="ctrl.lastname" type="text" class="validate">
+                        <label for="last_name">Last Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="email" type="email" ng-model="ctrl.email" class="validate">
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="email-confirm" type="email" ng-model="ctrl.cnfemail" class="validate">
+                        <label for="email-confirm">Email Confirmation</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="password" type="password" ng-model="ctrl.password" class="validate">
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="password-confirm" type="password" ng-model="ctrl.cnfpassword" class="validate">
+                        <label for="password-confirm">Password Confirmation</label>
+                    </div>
+                </div>
+                <center>
+                    <button class="btn waves-effect waves-light teal" type="submit" ng-click="ctrl.submitdata()" name="action">Submit</button>
+                </center>
+            </div>
+        </form>
+        </div>
+    </div>
+    <style type="text/css">
+        
+    .container
+    {
+        margin-top: 80px;
+        width: 400px;
+        height: 700px;
+    }
+
+    .tabs .indicator
+    {
+        background-color: #e0f2f1;
+        height: 60px;
+        opacity: 0.3;
+    }
+
+    .form-container
+    {
+        padding: 40px;
+        padding-top: 10px;
+    }
+
+    .confirmation-tabs-btn
+    {
+        position: absolute;
+    }
+    </style>
+</div>
     <!--
                 <div class="campl-row campl-local-footer" id="falcon-local-footer"><div class="campl-wrap clearfix"><div class="campl-column3 campl-footer-navigation"><div class="campl-content-container campl-navigation-list"><h3><a title="contact us" href="https://www.biology.cam.ac.uk/contact">
         Contact us
