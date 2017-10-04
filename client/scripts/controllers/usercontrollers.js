@@ -48,7 +48,21 @@
             	if(response.status==200){
             		console.log("VERFIED");
             	}
-            })
+            });
+            data={};
+        }
+        ctrl.logindata=function(){
+            var data ={
+            email : ctrl.email,
+            password : ctrl.password,
+            };
+            console.log(data);
+            MainService.loginsubmit(data).then(function(response){
+                if(response.status==200){
+                    console.log("VERFIED");
+                }
+            });
+            data={};
         }
         
     }
