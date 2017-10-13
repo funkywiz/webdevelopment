@@ -46,23 +46,24 @@
             console.log(data);
             MainService.verifydata(data).then(function(response){
             	if(response.status==200){
-            		console.log("ACCOUNT CREATED");
-            	}
+            		console.log("ACCOUNT CREATED");    
+            	} else if(response.status==301)
+                {
+                    console.log("User is already created");
+                }
             });
-            data={};
         }
         ctrl.logindata=function(){
-            var data ={
+            var data1 ={
             email : ctrl.email,
-            password : ctrl.password,
+            password : ctrl.password
             };
-            console.log(data);
-            MainService.loginsubmit(data).then(function(response){
+            console.log(data1);
+            MainService.loginsubmit(data1).then(function(response){
                 if(response.status==200){
                     console.log("VERFIED");
                 }
             });
-            data={};
         }
         
     }
