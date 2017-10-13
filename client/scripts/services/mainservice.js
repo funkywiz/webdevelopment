@@ -4,15 +4,16 @@
 	function MainService($http){
 		var service={};
 		service.verifydata=verifydata;
+		service.loginsubmit=loginsubmit;
 		return service;
 		
 		function verifydata(data){
-			return $http.post('http:localhost:3000/',data).then(successfunction,failurefunction);
+			return $http.post('http://localhost:3000/register',data).then(successfunction,failurefunction);
 		}
 		function loginsubmit(data){
-			return $http.post('http:localhost:3000/login',data).then(successfunction,failurefunction);		
+			return $http.post('http://localhost:3000/login',data).then(successfunction,failurefunction);		
 		}
-		function successfunctiion(data){
+		function successfunction(data){
 			console.log("HANDLED SUCCESSFULLY");
 			return data;
 		}

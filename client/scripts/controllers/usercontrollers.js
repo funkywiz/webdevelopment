@@ -46,7 +46,7 @@
             console.log(data);
             MainService.verifydata(data).then(function(response){
             	if(response.status==200){
-            		console.log("VERFIED");
+            		console.log("ACCOUNT CREATED");
             	}
             });
             data={};
