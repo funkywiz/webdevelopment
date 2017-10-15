@@ -62,6 +62,9 @@
             MainService.loginsubmit(data1).then(function(response){
                 if(response.status==200){
                     console.log("VERFIED");
+                }else if(response.status==301)
+                {
+                    console.log("User Details not correct");
                 }
             });
         }

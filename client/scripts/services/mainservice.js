@@ -11,7 +11,7 @@
 			return $http.post('http://localhost:3000/register',data).then(successfunction,failurefunction);
 		};
 		function loginsubmit(data){
-		//	return $http.post('http://localhost:3000/login',data).then(successfunction,failurefunction);		
+			return $http.post('http://localhost:3000/login',data).then(successfunction,failurefunction);		
 		};
 		function successfunction(data){
 			console.log("HANDLED SUCCESSFULLY");
