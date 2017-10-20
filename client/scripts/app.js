@@ -77,7 +77,8 @@ var states = [
     ];
 
     var app = angular.module('college', [
-        'ui.router'
+        'ui.router',
+        'ngCookies'
     ])
         .config(function($stateProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise('/');

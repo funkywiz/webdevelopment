@@ -18,9 +18,16 @@
         <div class="campl-wrap clearfix">
             <div class="campl-column12">
                 <div class="campl-content-container" id="falcon-logo-wrapper">
+                    <div style="color: white;font-size: 19 "><b><div class="actionMenu deactivated" ng-model="ctrl.Username" ng-if="ctrl.checkUsername()">Welcome {{ctrl.Username}}
+                    </div></b> </div>
+                    <div style="color: white;font-size: 19 "><b><div class="actionMenu deactivated" ng-model="ctrl.Username" ng-if="!ctrl.checkUsername()">Welcome to my Site     
+                    </div></b> </div>
                     <ul class="actionMenu deactivated" id="portal-personaltools" ng-click="ctrl.travsignup()">
-                        <li id="anon-personalbar" >
-                            <a href="" id="personaltools-login">Login/Register</a>
+                        <li id="anon-personalbar">
+                            <a href="" ng-click="ctrl.travsignup()" ng-if="!ctrl.checkUsername()" id="personaltools-login">Login/Register</a>
+                        </li>
+                        <li id="anon-personalbar">
+                            <a href="" ng-click="ctrl.logout()" ng-if="ctrl.checkUsername()" id="personaltools-login">Logout</a>
                         </li>
                     </ul>
                     <div class="campl-breadcrumb" id="campl-breadcrumb">
