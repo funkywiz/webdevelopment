@@ -1,7 +1,7 @@
 (function(){
 	angular.module('college').controller("Usercontrollers",Usercontrollers);
-    Usercontrollers.$inject= ['$state'];
-    function Usercontrollers($state){
+    Usercontrollers.$inject= ['$state','MainService'];
+    function Usercontrollers($state,MainService){
     	var ctrl=this;
     	var isLogin=true;
         ctrl.travcourses=function(){
@@ -44,6 +44,30 @@
             cnfpassword : ctrl.cnfpassword
             };
             console.log(data);
+            MainService.verifydata(data).then(function(response){
+            	if(response.status==200){
+            		console.log("ACCOUNT CREATED");    
+            	} else if(response.status==301)
+                {
+                    console.log("User is already created");
+                }
+            });
         }
+        ctrl.logindata=function(){
+            var data1 ={
+            email : ctrl.email,
+            password : ctrl.password
+            };
+            console.log(data1);
+            MainService.loginsubmit(data1).then(function(response){
+                if(response.status==200){
+                    console.log("VERFIED");
+                }else if(response.status==301)
+                {
+                    console.log("User Details not correct");
+                }
+            });
+        }
+        
     }
 })();
